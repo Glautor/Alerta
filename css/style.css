@@ -80,3 +80,6 @@ input[type=text]{
 	color: #227210;
 	text-align: center;
 }
+.body.hide{
+	display:none;
+}

@@ -31,13 +31,30 @@
             });
 
          });
-         
+
+         $(function() {
+             $('.title').click(function(){
+               var conteudo = $(this).parent().find('.body');
+
+               if(!conteudo.hasClass('show'));
+                  $('.alerta').find('.show').slideUp('fast', function(){
+                     $(this).addClass('hide').removeClass('show')
+                  });
+
+                  conteudo.slideDown('fast',function(){
+                     $(this).addClass('show').remove('hide')
+                  });
+
+             });
+
+         });
+
       </script>
    </head>
    <body>
       <div id="alerta" hidden="">
          <div class="title">Receba Nossas Novidades <i class="fa fa-times"></i></div>
-         <div class="body">
+         <div class="body hide">
             <form id="novidadesform" name="contact-form" method="POST" >
                <label>e-mail:</label>
                <input type="text" name="email" id="email" placeholder="digite seu email">
